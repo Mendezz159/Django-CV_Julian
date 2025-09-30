@@ -1,0 +1,175 @@
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ1Q91KHZ1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DQ1Q91KHZ1');
+    </script>
+    <meta charset="UTF-8">
+    <title>Hoja de vida</title>
+    <!-- Importa la fuente desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+    <div class="barra-superior">
+        <div class="barra-contenido">
+            <div class="barra-foto">
+                <img src="{% static 'media\profile_picture.jpg' %}" alt="Foto de perfil" class="foto-perfil">
+            </div>
+            <div class="barra-info">
+                Julian Mauricio Mendoza Ochoa<br>
+                Estudiante de Ingeniería de Software<br>
+                &emsp;+57 320 341 5568<br>
+                &emsp;mendezz1596357@gmail.com
+            </div>
+        </div>
+    </div>
+    <div class="contenedor">
+        <h1>
+            Perfil
+        </h1>
+        <p>
+            Estudiante de octavo semestre con fortaleza en el manejo de resolución de problemas en equipo, gran
+            adaptabilidad a nuevas tecnologías, con conocimiento en manejo de bases de datos, paradigmas en la
+            programación e infraestructura de redes. <br>
+            Con gran capacidad en el análisis y solución de contratiempos, junto con tendencias a la búsqueda de
+            procesos óptimos y sobre todo, sostenibles en el tiempo, con excelentes aptitudes logico-matematicas y gusto
+            por poner dichas aptitudes en practica
+        </p>
+        <h1>
+            Estudios
+        </h1>
+        <p>
+            <span class="bold">2010-2021</span> Instituto San Bernardo de la Salle<br>
+            &emsp;Bachiller Academico
+            <span class="half-break"></span>
+            <span class="bold">2022-En Curso</span> Universidad Manuela Beltran<br>
+            &emsp;Ingeniería de Software (Octavo Semestre)
+        </p>
+        <script>
+            function ajustarPadding() {
+                const barra = document.querySelector('.barra-superior');
+                document.body.style.paddingTop = barra.offsetHeight + 'px';
+            }
+            window.addEventListener('DOMContentLoaded', ajustarPadding);
+            window.addEventListener('resize', ajustarPadding);
+        </script>
+        <h1>
+            Proyectos
+        </h1>
+        <p>
+            <span class="bold">Gestor de registros de salones de la UMB:</span>
+            <span class="half-break"></span>
+            Durante el tercer semestre de la carrera, por parte del área administrativa de la Universidad Manuela
+            Beltrán fue requerida una aplicación para gestionar la ocupación de salones y se solicitó al grupo de
+            semillero, del cual yo hacia parte, desarrollar esta aplicación. La aplicación tenia como objetivo que el
+            personal de la universidad pudiera ingresar informacion de los salones y editar el estado del salón a una
+            hora concreta. Y que los cambios realizados quedasen guardados en la nube para acceder a ellos
+            fácilmente.<br>
+            El proyecto se llevo a cabo con Excel Office y las plataformas Power Apps y Power Automate por requerimiento
+            explícito del solicitante. Tuve a mi cargo el área del backend, donde inicialmente reestructuré los datos y
+            registros ya existentes provistos por el área administrativa en Excel Office, como base de datos, para
+            posteriormente guardarlos en la nube. Codifiqué la conexión entre la base de datos en la nube y la
+            aplicación de usuario usando el lenguaje Microsoft Power FX, para generar los procesos de solicitud y
+            filtrado de datos en Power Automate. Decidí utilizar la arquitectura Separación por Capas debido a la
+            cantidad masiva de registros que los horarios de la universidad maneja. Tambien se dividió la conexión
+            programando micro-servicios para optimizar la velocidad de respuesta debido a la densidad de datos
+            mencionada. Se logró desarrollar exitosamente un CRUD operable desde la aplicación con distintas vistas
+            creando una distribución de servicios de consulta asíncronos en Power Automate en un tiempo estimado de 6
+            meses durante la jornada universitaria.<br>
+        </p>
+        <p>
+            <span class="bold">Proyecto de ERP. E-TradeTech:</span>
+            <span class="half-break"></span>
+            En colaboración con un equipo de estudiantes durante el séptimo semestre de mi carrera hicimos una propuesta
+            de ERP de 5 módulos enfocada en la gestión de comercios de hardware. La aplicación debía registrar los
+            inventarios de almacenes, las solicitudes de pedidos, las listas de proveedores, los contratos de
+            trabajadores y los datos contables. Estos datos debían ser suministrados al sistema por los usuarios asi
+            como mostrar dichos datos dependiendo del usuario que los consulta. Por parte del frontend el proyecto se
+            hizo con JavaScript y HTML5, mientras que por parte del backend se utilizó Java y Microsoft SQL Server.<br>
+            Dentro de mis funciones en el proyecto estuvo el planteamiento lógico de la interaccion entre módulos
+            haciendo los mapas de secuencia y mapas de actividades. A mi cargo estuvo el modelado completo de la base de
+            datos asi como del montaje del entorno en los distintos equipos de prueba. Respecto al desarrollo, me
+            encargué de desarrollar el backend codificando la conexión entre la base de datos SQL con el proyecto en
+            Java, y usando esta conexión para crear un CRUD que pudiese controlarse desde el proyecto de java.<br>
+            En cooperación con la otra parte del equipo encargada del frontend y la conexión de front a back, logramos
+            programar las funcionalidades clave de cada uno de los 5 módulos, asi como crear su documentación en 4 meses
+            durante la jornada universitaria.
+        </p>
+        <h1>
+            Habilidades
+        </h1>
+        <p>
+            <span class="bold">Java:</span>
+            <span class="half-break"></span>
+            Como una de las primeras habilidades aprendidas a lo largo de la carrera, java a sido una herramienta
+            indispensable para el desarrollo de distintos proyectos, los cuales principalmente he llevado a cabo desde
+            el backend.<br>
+            <span class="bold">Linux:</span>
+            <span class="half-break"></span>
+            Una habilidad obtenida como herramienta para la creación de infraestructura de redes, fue indispensable
+            aprender el uso de Linux para la creación de servidores en una red.<br>
+            <span class="bold">Python:</span>
+            <span class="half-break"></span>
+            Fue empleada para el procesamiento asincrónico de operaciones y el consumo de APIs, el aprendizaje de Python
+            fue una oportunidad para la creación de nuevos sistemas y entornos.<br>
+            <span class="bold">SQL:</span>
+            <span class="half-break"></span>
+            Al tener un conocimiento previo de la creación y edición de bases de datos relacionales, el aprendizaje de
+            <span class="underline">Microsoft SQL Server</span> y <span class="underline">MySQL</span> fue especialmente
+            útil para desenvolver ese conocimiento en el desarrollo de aplicaciones, paginas, y servicios.<br>
+            <span class="bold">Docker:</span>
+            <span class="half-break"></span>
+            Usado tambien en la creación de servicios tanto de paginas como de enrutamiento en redes, Docker fue una
+            herramienta aprendida a partir de la exploración de alternativas de menor consumo para el procesamiento de
+            datos y solicitudes.<br>
+            <span class="bold">Git y GitHub:</span>
+            <span class="half-break"></span>
+            Una clave durante la creación de todo proyecto hecho durante el aprendizaje de herramientas, Git a sido un
+            pilar indispensable para la organización de equipo, registro de versiones, despliegue de entornos y solución
+            de conflictos en código.<br>
+            <span class="bold">Notion:</span>
+            <span class="half-break"></span>
+            En el trabajo en equipo, para poder plantear y usar metodologías agiles para organizar las tareas, e
+            desarrollado un gran uso de notion para poder adaptarse a cualquier metodología ágil dependiendo de las
+            necesidades puntuales del equipo<br>
+            <span class="bold">Jira:</span>
+            <span class="half-break"></span>
+            Habiendo aplicado metodologías agiles antes, tanto en su planteo como en su seguimiento, al entrar en un
+            equipo con uso de Jira, aprendí de su uso fácilmente con el conocimiento y experiencia previa<br>
+            <span class="bold">Azure:</span>
+            <span class="half-break"></span>
+            A partir de la exploración de métodos para guardado de bases de datos SQL en la nube, e aprendido sobre el
+            uso de Asure como plataforma para acceder a Platform as a Service, lo que termino en su exploración para
+            otras funciones, como servidores<br>
+        </p>
+        <h1>
+            Certificados
+        </h1>
+        <p>
+            <span class="bold">Google Cloud Computing Foundations Certificate:</span>
+            <span class="half-break"></span>
+            Dentro del plan de estudio de la universidad en Sexto semestre estuvo la certificación de cloud computing de
+            Google la cual completé.<br>
+            <a href="https://www.credly.com/badges/247eaee2-2785-4f9a-a8b0-6f64080a4f8c/public_url"
+                target="_blank">https://www.credly.com/badges/247eaee2-2785-4f9a-a8b0-6f64080a4f8c/public_url</a>
+        </p>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

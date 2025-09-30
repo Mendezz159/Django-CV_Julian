@@ -1,5 +1,5 @@
 """
-WSGI config for MiCV project.
+WSGI config for MySide project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MiCV.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MySide.settings')
 
 application = get_wsgi_application()
