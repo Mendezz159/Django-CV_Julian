@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Contacto
+from .models import Contacto, Videojuego
 from .forms import CrearRegistroContacto
 
 # Create your views here.
@@ -19,3 +19,6 @@ def contactame(request):
         )
         return redirect('/')
 
+def open_view(request):
+    videojuegos = Videojuego.objects.all()
+    return render(request, "open.html", {"videojuegos": videojuegos})

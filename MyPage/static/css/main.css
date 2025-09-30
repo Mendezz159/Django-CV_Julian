@@ -173,25 +173,34 @@
     background-color: #e6b800; /* Color al pasar el cursor */
 }
 
+.contenedor-banner {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .banner {
-    width: 100%;
-    text-align: center;
-    padding: 0; /* Elimina el padding para que las imágenes ocupen todo el espacio */
+  width: 100%;
+  overflow: hidden;
 }
 
 .banner-img {
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho del banner */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Elimina espacios blancos debajo de la imagen */
+  display: block;
+  width: 100%;
+  height: 40vh;           /* altura relativa al viewport */
+  min-height: 200px;     /* mínimo razonable */
+  object-fit: cover;     /* recorta manteniendo aspecto */
+  object-position: center;
 }
 
-.banner-1 {
-    background-color: #150b6b; /* Azul oscuro */
-}
-
-.banner-2 {
-    background-color: #ffcc00; /* Amarillo */
-    color: #150b6b; /* Texto azul */
+.banner-img-inferior {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Cambiado de cover a contain */
+    border-radius: inherit;
+    background: #fff; /* Opcional: fondo blanco si la imagen no llena todo */
 }
 
 /* Estilos para el formulario */
@@ -243,3 +252,34 @@ button[type="submit"]:hover {
     background-color: #0e084a;
 }
 
+.banner-inferior {
+            position: fixed;
+            bottom: 0;
+            width: 50%;
+            height: 60px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            z-index: 1000;
+        }
+
+        .banner-izquierdo {
+            left: 0;
+            background: #2d7cff;
+            border-top-right-radius: 15px;
+        }
+
+        .banner-derecho {
+            right: 0;
+            background: #ff7c2d;
+            border-top-left-radius: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .banner-inferior {
+                font-size: 1em;
+                height: 40px;
+            }
+        }
