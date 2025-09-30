@@ -27,7 +27,7 @@ DEBUG = True
 
 import os
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [os.environ.get("RAILWAY_STATIC_URL", "")]
 
 
 # Application definition
