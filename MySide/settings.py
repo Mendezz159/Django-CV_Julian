@@ -29,6 +29,10 @@ import os
 
 ALLOWED_HOSTS = ["https://django-cvjulian-production.up.railway.app","*"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://django-cvjulian-production.up.railway.app"
+]
+
 
 # Application definition
 
