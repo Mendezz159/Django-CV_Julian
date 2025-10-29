@@ -27,7 +27,7 @@ DEBUG = False
 
 import os
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://django-cvjulian-production.up.railway.app","*"]
 
 
 # Application definition
