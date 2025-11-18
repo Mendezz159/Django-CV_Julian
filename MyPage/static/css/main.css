@@ -270,13 +270,13 @@ button[type="submit"]:hover {
 .banner-izquierdo {
     float: left; /* Añadido para posicionar a la izquierda */
     background: #2d7cff;
-    border-top-right-radius: 15px;
+    border-top-right-radius: 10px;
 }
 
 .banner-derecho {
     float: right; /* Añadido para posicionar a la derecha */
     background: #ff7c2d;
-    border-top-left-radius: 15px;
+    border-top-left-radius: 10px;
 }
 
 /* Añadir un contenedor para los banners */
@@ -297,6 +297,18 @@ button[type="submit"]:hover {
 @media (min-width: 768px) {
     .banner-container {
         margin-top: 40px;
+    }
+}
+
+/* Reservar espacio para los banners inferiores */
+body {
+    padding-bottom: 220px; /* >= altura máxima de los banners */
+}
+
+/* Ajuste para móvil */
+@media (max-width: 767px) {
+    body {
+        padding-bottom: 180px;
     }
 }
 
