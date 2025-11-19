@@ -6,6 +6,9 @@ from .forms import CrearRegistroContacto
 def index(request):
     return render(request, "index.html")
 
+def preguntas_frecuentes(request):
+    return render(request, "fyq.html")
+
 def contactame(request):
     if request.method == 'GET':
         return render(request, "contactame.html", {

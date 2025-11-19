@@ -1,0 +1,171 @@
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ1Q91KHZ1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DQ1Q91KHZ1');
+    </script>
+    <meta charset="UTF-8">
+    <title>Hoja de vida</title>
+    <!-- Importa la fuente desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style>
+        /* Estilos para el enunciado desplegable (collapsible) */
+        .collapsible {
+            background: #f2f2f2;
+            border: 1px solid #ddd;
+            padding: 10px 14px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+        .collapsible:after {
+            content: '\25BC';
+            float: right;
+            transition: transform 0.25s ease;
+        }
+        .collapsible[aria-expanded="true"]:after {
+            transform: rotate(180deg);
+        }
+        .collapsible-content {
+            overflow: hidden;
+            transition: max-height 0.25s ease, padding 0.25s ease;
+            max-height: 0;
+            padding: 0 6px;
+        }
+        .collapsible-content.open {
+            max-height: 400px; /* suficiente para contenido corto */
+            padding: 10px 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="barra-superior">
+        <div class="barra-contenido">
+            <div class="barra-foto">
+                <img src="{% static 'media\profile_picture.jpg' %}" alt="Foto de perfil" class="foto-perfil">
+            </div>
+            <div class="barra-info">
+                Julian Mauricio Mendoza Ochoa<br>
+                Estudiante de Ingeniería de Software<br>
+                &emsp;+57 320 341 5568<br>
+                &emsp;mendezz1596357@gmail.com
+            </div>
+            <div class="barra-botones">
+            <button class="barra-boton" onclick="window.location.href='/'">Volver</button>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor">
+        <h1>Preguntas Frecuentes</h1>
+        <!-- Enunciado desplegable: haz click para mostrar/ocultar el texto debajo -->
+        <button type="button" class="collapsible" aria-expanded="false" aria-controls="detalle1" id="toggle-detalle1">
+            ¿Cuál es tu estilo de trabajo en equipo?
+        </button>
+        <div class="collapsible-content" id="detalle1" aria-hidden="true">
+            <p>
+                Me gusta trabajar desde la comunicación clara y la asignación bien definida de responsabilidades. Suelo asumir el rol de organizador cuando el equipo lo necesita, ayudando a estructurar tareas y facilitar el flujo de trabajo entre áreas técnicas y no técnicas.
+            </p>
+        </div>
+        <button type="button" class="collapsible" aria-expanded="false" aria-controls="detalle2" id="toggle-detalle2">
+            ¿Qué tipo de proyectos te gustaría desarrollar en el futuro?
+        </button>
+        <div class="collapsible-content" id="detalle2" aria-hidden="true">
+            <p>
+                Me interesa especialmente trabajar en proyectos que integren automatización, optimización de procesos y arquitecturas escalables. También me atraen las soluciones que requieren integrar múltiples tecnologías o servicios para resolver problemas reales en entornos empresariales o educativos.
+            </p>
+        </div>
+        <button type="button" class="collapsible" aria-expanded="false" aria-controls="detalle3" id="toggle-detalle3">
+            ¿Cómo abordas el aprendizaje de nuevas herramientas o lenguajes?
+        </button>
+        <div class="collapsible-content" id="detalle3" aria-hidden="true">
+            <p>
+                Suelo comenzar por entender el propósito de la herramienta y su contexto dentro del ecosistema tecnológico. Luego paso a aprender la sintaxis o configuración mediante documentación oficial y pequeños proyectos de prueba.
+            </p>
+        </div>
+        <button type="button" class="collapsible" aria-expanded="false" aria-controls="detalle4" id="toggle-detalle4">
+            ¿Qué te motiva a desarrollar software?
+        </button>
+        <div class="collapsible-content" id="detalle4" aria-hidden="true">
+            <p>
+                Me motiva la posibilidad de transformar una idea en un sistema funcional que facilite la vida de las personas o mejore procesos complejos. Disfruto particularmente el reto lógico que representan los problemas de programación y la satisfacción de diseñar soluciones eficientes y bien estructuradas.
+            </p>
+        </div>
+        <button type="button" class="collapsible" aria-expanded="false" aria-controls="detalle5" id="toggle-detalle5">
+            ¿Cómo manejas los contratiempos durante un proyecto?
+        </button>
+        <div class="collapsible-content" id="detalle5" aria-hidden="true">
+            <p>
+                Cuando surge un contratiempo, lo primero que hago es analizar el origen del problema y determinar si es técnico, de comunicación o de proceso. A partir de ahí planteo alternativas viables, priorizando las que reduzcan el impacto en los tiempos y mantengan la calidad del proyecto.
+            </p>
+        </div>
+    </div>
+
+    
+
+
+</body>
+
+<script>
+    // Script para controlar el comportamiento del collapsible (soporta múltiples elementos)
+    (function(){
+        const buttons = document.querySelectorAll('.collapsible');
+        if (!buttons || buttons.length === 0) return;
+
+        buttons.forEach(function(btn){
+            // Determinar el contenido asociado: primero por aria-controls, si no existe, buscar el siguiente hermano .collapsible-content
+            const controlId = btn.getAttribute('aria-controls');
+            let content = controlId ? document.getElementById(controlId) : null;
+            if (!content) {
+                let el = btn.nextElementSibling;
+                while (el && !el.classList.contains('collapsible-content')) {
+                    el = el.nextElementSibling;
+                }
+                content = el;
+            }
+
+            // Inicializar atributos ARIA si el contenido existe
+            if (content) {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                content.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+                if (expanded) content.classList.add('open');
+            }
+
+            btn.addEventListener('click', function(){
+                if (!content) return;
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                content.classList.toggle('open', !expanded);
+                content.setAttribute('aria-hidden', String(expanded));
+            });
+        });
+    })();
+
+    // Ajuste del padding top para que el contenido no quede oculto detrás de la barra superior
+    function ajustarPadding() {
+        const barra = document.querySelector('.barra-superior');
+        if (!barra) return;
+        document.body.style.paddingTop = barra.offsetHeight + 'px';
+    }
+    window.addEventListener('DOMContentLoaded', ajustarPadding);
+    window.addEventListener('resize', ajustarPadding);
+</script>
+
+</html>
+
+{% endblock %}

@@ -173,6 +173,41 @@
     background-color: #e6b800; /* Color al pasar el cursor */
 }
 
+/* Botón de footer: clonado de .barra-boton pero con posicionamiento distinto
+   (no hereda, estilos duplicados explícitamente) */
+.footer-boton {
+    background-color: #ffcc00; /* Color del botón (clonado) */
+    color: #150b6b; /* Color del texto (clonado) */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-family: 'Arbutus Slab', Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Posicionamiento cambiado: centrado y relativo dentro del contenedor */
+    display: inline-block;
+    position: relative;
+    right: auto;
+    transform: none;
+    margin: 12px auto; /* espacio y centrado horizontal vía contenedor */
+}
+
+.footer-boton:hover {
+    background-color: #e6b800; /* mismo hover que .barra-boton */
+}
+
+/* Contenedor para centrar el botón sobre los banners */
+.footer-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;
+    margin-top: 8px;
+    box-sizing: border-box;
+    padding: 0 16px;
+}
+
 .contenedor-banner {
   width: 100vw;
   max-width: none;
